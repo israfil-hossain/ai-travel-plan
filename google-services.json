@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "498091557195",
+    "project_id": "ai-travel-planner-c198b",
+    "storage_bucket": "ai-travel-planner-c198b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498091557195:android:f43a5225f22fa8dc5568ce",
+        "android_client_info": {
+          "package_name": "com.travelo.App"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy197lxGut_nzyn0QPVvQjJk54VsemJFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
