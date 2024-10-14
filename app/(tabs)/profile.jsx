@@ -85,7 +85,8 @@ export default function Profile() {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity className="flex flex-row justify-between mb-3 border rounded-xl  blur-md " activeOpacity={0.4}>
+        <TouchableOpacity className="flex flex-row justify-between mb-3 border rounded-xl  blur-md " activeOpacity={0.4} 
+        onPress={()=> router.push("expense/my-expense")}>
           <View className="flex flex-row space-x-3 items-center">
             <FontAwesome6 name="money-bills" size={17} color={Colors.GRAY} />
             <Text className="font-[outfit-medium] text-[16px] text-grey">
