@@ -18,7 +18,7 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useEffect } from "react";
 
-export default function Profile() {
+function Profile() {
   const { logout, user } = useAuthStore();
   const router = useRouter();
   const navigation = useNavigation();
@@ -258,3 +258,5 @@ const styles = StyleSheet.create({
     gap: 8,
   },
 });
+
+export default Profile;
