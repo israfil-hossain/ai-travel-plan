@@ -19,7 +19,7 @@ import UserTripList from "../../components/MyTrip/UserTripList";
 import { useRouter } from "expo-router";
 
 
-export default function Mytrip() {
+function Mytrip() {
 
   const router = useRouter(); 
   const [userTrips, setUserTrips] = useState([]);
@@ -83,4 +83,6 @@ export default function Mytrip() {
     </View>
   );
 }
+
+export default Mytrip;
 

@@ -4,8 +4,8 @@ import {
   Image,
   ActivityIndicator,
   ScrollView,
-  SafeAreaView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useEffect, useState } from "react";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import { Colors } from "../../constants/Colors";
@@ -15,7 +15,7 @@ import HotelList from "../../components/TripDetails/HotelList";
 import ParallaxScrollView from "../../components/ParallaxScrollView";
 import PlannedTrip from "../../components/TripDetails/PlannedTrip";
 
-const TripDetails = () => {
+function TripDetails() {
   const navigation = useNavigation();
   const { trip } = useLocalSearchParams();
 
@@ -113,6 +113,6 @@ const TripDetails = () => {
       )}
     </SafeAreaView>
   );
-};
+}
 
 export default TripDetails;

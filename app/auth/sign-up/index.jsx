@@ -12,10 +12,13 @@ import { Colors } from "@/constants/Colors";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { signUpWithEmail } from "../../../firebase-api/auth";
+import useAuthStore from "../../../store/auth-store";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function SignUp() {
+function SignUp() {
   const navigation = useNavigation();
   const router = useRouter();
+  const { setUser } = useAuthStore();
   const [isLoading, setIsLoading] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
 
@@ -38,15 +41,15 @@ export default function SignUp() {
 
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
+      const user = await signUpWithEmail(values.email, values.password);
       if (user) {
-        await AsyncStorage.setItem("user", JSON.stringify(user)); // Store user data in AsyncStorage
-        setUser(user); // Update Zustand store
+        await AsyncStorage.setItem("user", JSON.stringify(user));
+        setUser(user);
         console.log("User signed up successfully:", user);
-        router.replace("/(tabs)/mytrip"); // Navigate to the main screen
+        router.replace("/(tabs)/mytrip");
       }
     } catch (error) {
       console.error("Error during sign-up:", error.message);
-      // Show error message to the user
     } finally {
       setSubmitting(false);
     }
@@ -184,3 +187,5 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 });
+
+export default SignUp;

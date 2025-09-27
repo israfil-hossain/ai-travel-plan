@@ -10,7 +10,7 @@ import { ToastProvider } from "react-native-toast-notifications";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+function RootLayout() {
   const [loaded] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     outfit: require("./../assets/fonts/Outfit-Regular.ttf"),
@@ -51,3 +51,5 @@ export default function RootLayout() {
     </ThemeProvider>
   );
 }
+
+export default RootLayout;

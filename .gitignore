@@ -9,7 +9,6 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-.env
 
 # macOS
 .DS_Store
@@ -19,3 +18,7 @@ web-build/
 
 expo-env.d.ts
 # @end expo-cli
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat

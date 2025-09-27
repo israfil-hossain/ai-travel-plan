@@ -32,16 +32,18 @@ export default function SearchPlace() {
         placeholder="Search Place"
         fetchDetails={true}
         onPress={(data, details = null) => {
-          // 'details' is provided when fetchDetails = true
-        
-          const locationInfo = {
-            name: data?.description,
-            coordinates: details?.geometry?.location,
-            photoRef: details?.photos[0]?.photo_reference,
-            url: details?.url,
-          };
-          setTripData(locationInfo);
-          router.push("/create-trip/select-traveler");
+          try {
+            const locationInfo = {
+              name: data?.description,
+              coordinates: details?.geometry?.location,
+              photoRef: details?.photos?.[0]?.photo_reference,
+              url: details?.url,
+            };
+            setTripData(locationInfo);
+            router.push("/create-trip/select-traveler");
+          } catch (error) {
+            console.error('Error processing location data:', error);
+          }
         }}
         query={{
           key: process.env.EXPO_PUBLIC_GOOGLE_MAP_KEY,

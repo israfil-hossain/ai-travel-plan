@@ -10,7 +10,7 @@ import { chatSession } from "../../configs/AiModel";
 import { doc, setDoc } from "@firebase/firestore";
 import { db } from "../../configs/FirebaseConfig";
 
-export default function GenerateTrip() {
+function GenerateTrip() {
   const navigation = useNavigation();
   const tripData = useTripStore((state) => state.tripData || {});
   const reset = useTripStore((state) => state.reset);
@@ -111,3 +111,5 @@ export default function GenerateTrip() {
     </View>
   );
 }
+
+export default GenerateTrip;

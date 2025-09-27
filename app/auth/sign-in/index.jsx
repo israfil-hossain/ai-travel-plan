@@ -15,6 +15,7 @@ import * as Yup from "yup";
 import * as Google from "expo-auth-session/providers/google";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
 import { signInWithEmail } from "../../../firebase-api/auth";
+import { auth } from "../../../configs/FirebaseConfig";
 import * as WebBrowser from "expo-web-browser";
 import useAuthStore from "../../../store/auth-store";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -22,7 +23,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // Important for web-based sign-in flow to complete
 WebBrowser.maybeCompleteAuthSession();
 
-export default function SignIn() {
+function SignIn() {
   const navigation = useNavigation();
   const router = useRouter();
   const { setUser } = useAuthStore();
@@ -229,3 +230,5 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 });
+
+export default SignIn;
